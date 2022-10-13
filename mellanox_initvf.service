@@ -3,6 +3,7 @@ After=network.target
 
 [Service]
 Type=simple
+# note: change according to your hardware:
 ExecStart=/bin/bash -c "/usr/bin/echo 4 > /sys/class/infiniband/ibp175s0/device/sriov_numvfs"
 ExecStartPost=/usr/local/bin/initIbGuids.sh
 StandardOutput=journal
