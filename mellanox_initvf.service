@@ -1,0 +1,14 @@
+[Unit]
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c "/usr/bin/echo 4 > /sys/class/infiniband/ibp175s0/device/sriov_numvfs"
+ExecStartPost=/usr/local/bin/initIbGuids.sh
+StandardOutput=journal
+TimeoutStartSec=60
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
