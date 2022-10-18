@@ -5,8 +5,6 @@ first_dev=$(ibstat --list_of_cas | head -n 1)
 node_guid=$(ibstat ${first_dev} | grep "Node GUID" | cut -d ':' -f 2 | xargs | cut -d 'x' -f 2)
 port_guid=$(ibstat ${first_dev} | grep "Port GUID" | cut -d ':' -f 2 | xargs | cut -d 'x' -f 2)
 
-base_addr=""
-
 echo "first dev: $first_dev"
 echo "node guid: $node_guid"
 echo "port_guid: $port_guid"
