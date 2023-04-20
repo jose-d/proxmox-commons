@@ -1,0 +1,12 @@
+[Unit]
+Description=Starts the OpenSM InfiniBand fabric Subnet Manager
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/opensm
+StandardOutput=journal
+TimeoutStartSec=60
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
